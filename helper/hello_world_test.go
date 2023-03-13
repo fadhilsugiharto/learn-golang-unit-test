@@ -6,7 +6,7 @@ func TestHello(t *testing.T) {
 	result := Hello("Fadhil")
 
 	if result != "Hello Fadhil" {
-		// error
+		//error
 		panic("Result is not 'Hello Fadhil'")
 	}
 }
