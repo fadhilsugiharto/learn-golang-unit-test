@@ -7,6 +7,16 @@ import (
 	"testing"
 )
 
+func TestMain(m *testing.M) {
+	// Before Test
+	fmt.Println("UNIT TEST STARTED")
+
+	m.Run()
+
+	// After Test
+	fmt.Println("UNIT TEST FINISHED")
+}
+
 func TestHelloAssert(t *testing.T) {
 	result := Hello("Fadhil")
 
