@@ -17,6 +17,33 @@ func TestMain(m *testing.M) {
 	fmt.Println("UNIT TEST FINISHED")
 }
 
+func TestTableHello(t *testing.T) {
+	tests := []struct {
+		name     string
+		request  string
+		expected string
+	}{
+		{
+			name:     "Hello(Fadhil)",
+			request:  "Fadhil",
+			expected: "Hello Fadhil",
+		},
+		{
+			name:     "Hello(KunK)",
+			request:  "KunK",
+			expected: "Hello KunK",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			result := Hello(test.request)
+			assert.Equal(t, result, test.expected, "Result is not matched")
+		})
+	}
+
+}
+
 func TestSubTest(t *testing.T) {
 	t.Run("TestNameFadhil", func(t *testing.T) {
 		result := Hello("Fadhil")
