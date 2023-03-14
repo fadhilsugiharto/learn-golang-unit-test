@@ -17,6 +17,18 @@ func TestMain(m *testing.M) {
 	fmt.Println("UNIT TEST FINISHED")
 }
 
+func TestSubTest(t *testing.T) {
+	t.Run("TestNameFadhil", func(t *testing.T) {
+		result := Hello("Fadhil")
+		assert.Equal(t, result, "Hello Fadhil", "Result must be 'Hello Fadhil'")
+	})
+
+	t.Run("TestNameKunK", func(t *testing.T) {
+		result := Hello("KunK")
+		assert.Equal(t, result, "Hello KunK", "Result must be 'Hello KunK'")
+	})
+}
+
 func TestHelloAssert(t *testing.T) {
 	result := Hello("Fadhil")
 
