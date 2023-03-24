@@ -45,6 +45,30 @@ func BenchmarkSubHello(b *testing.B) {
 	})
 }
 
+func BenchmarkTable(b *testing.B) {
+	benchmarks := []struct {
+		name    string
+		request string
+	}{
+		{
+			name:    "A",
+			request: "A",
+		},
+		{
+			name:    "A_banyak",
+			request: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		},
+	}
+
+	for _, benchmark := range benchmarks {
+		b.Run(benchmark.name, func(b *testing.B) {
+			for i := 0; i < b.N; i++ {
+				Hello(benchmark.request)
+			}
+		})
+	}
+}
+
 func TestTableHello(t *testing.T) {
 	tests := []struct {
 		name     string
