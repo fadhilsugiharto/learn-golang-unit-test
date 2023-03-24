@@ -32,6 +32,19 @@ func BenchmarkHelloKunKKKKKKKKKKKK(b *testing.B) {
 	}
 }
 
+func BenchmarkSubHello(b *testing.B) {
+	b.Run("A", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			Hello("A")
+		}
+	})
+	b.Run("A_banyak", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			Hello("AAAAAAAAAAAAAAAAAAAAAAAAAAA")
+		}
+	})
+}
+
 func TestTableHello(t *testing.T) {
 	tests := []struct {
 		name     string
