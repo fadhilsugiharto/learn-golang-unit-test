@@ -17,6 +17,21 @@ func TestMain(m *testing.M) {
 	fmt.Println("UNIT TEST FINISHED")
 }
 
+// Benchmark function name must start with 'Benchmark'
+// with parameter b *testing.B
+// with no return value
+func BenchmarkHelloFadhil(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Hello("Fadhil")
+	}
+}
+
+func BenchmarkHelloKunKKKKKKKKKKKK(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Hello("KunKKKKKKKKKKKK")
+	}
+}
+
 func TestTableHello(t *testing.T) {
 	tests := []struct {
 		name     string
